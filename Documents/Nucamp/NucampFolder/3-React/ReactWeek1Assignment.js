@@ -12,7 +12,6 @@ class Bootcamp{
         this.name = name;
         this.level = level;
         this.students = students;
-        
     }
     registerStudent(student){
         if(this.students.filter(s => s.email === student.email).length){
