@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Breadcrumb, BreadcrumbItem ,
-Button, Label, Input, Col, Row } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem , Label, Col, Row, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm,Errors} from 'react-redux-form';
 
@@ -111,15 +110,15 @@ class Contact extends Component {
                         <hr />
                     </div>
                     <div className="col-md-10">
-                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                    <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Control.text model=".firstName" id="firstName" name="firstName"
+                                <Control.text model=".firstName" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
-                                            required,
+                                            required, 
                                             minLength: minLength(2),
                                             maxLength: maxLength(15)
                                         }}
@@ -130,17 +129,16 @@ class Contact extends Component {
                                         show="touched"
                                         component="div"
                                         messages={{
-                                            required: "required",
-                                            minLength: "Must ba at least 2 characters",
-                                            maxLength: "Must be 15 characters or less "
+                                            required: 'Required',
+                                            minLength: 'Must be at least 2 characters',
+                                            maxLength: 'Must be 15 characters or less'
                                         }}
                                     />
                                 </Col>
                             </Row>
                             <Row className="form-group">
                                 <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                <Col md={10}> 
-                                 { /*It's equivalent to className="col-md-10" */ }
+                                <Col md={10}>
                                     <Control.text model=".lastName" id="lastName" name="lastName"
                                         placeholder="Last Name"
                                         className="form-control"
@@ -156,12 +154,12 @@ class Contact extends Component {
                                         show="touched"
                                         component="div"
                                         messages={{
-                                            required: "required",
-                                            minLength: "Must ba at least 2 characters",
-                                            maxLength: "Must be 15 characters or less "
+                                            required: 'Required',
+                                            minLength: 'Must be at least 2 characters',
+                                            maxLength: 'Must be 15 characters or less'
                                         }}
                                     />
-                                </Col>                        
+                                </Col>
                             </Row>
                             <Row className="form-group">
                                 <Label htmlFor="phoneNum" md={2}>Phone</Label>
@@ -171,7 +169,7 @@ class Contact extends Component {
                                         className="form-control"
                                         validators={{
                                             required,
-                                            minLength: minLength(2),
+                                            minLength: minLength(10),
                                             maxLength: maxLength(15),
                                             isNumber
                                         }}
@@ -182,10 +180,10 @@ class Contact extends Component {
                                         show="touched"
                                         component="div"
                                         messages={{
-                                            required: "required",
-                                            minLength: "Must ba at least 10 numbers",
-                                            maxLength: "Must be 15 numbers or less",
-                                            isNumber: "Must be a number"
+                                            required: 'Required',
+                                            minLength: 'Must be at least 10 numbers',
+                                            maxLength: 'Must be 15 numbers or less',
+                                            isNumber: 'Must be a number'
                                         }}
                                     />
                                 </Col>
@@ -207,19 +205,18 @@ class Contact extends Component {
                                         show="touched"
                                         component="div"
                                         messages={{
-                                            required: "required",
-                                            validEmail: "Invalid email address"
+                                            required: 'Required',
+                                            validEmail: 'Invalid email address'
                                         }}
                                     />
                                 </Col>
                             </Row>
                             <Row className="form-group">
                                 <Col md={{size: 4, offset: 2}}>
-                                {/* <div class='col-md-4 offset-md-2'> */}
                                     <div className="form-check">
                                         <Label check>
                                             <Control.checkbox
-                                                model=".agree"  
+                                                model=".agree"
                                                 name="agree"
                                                 className="form-check-input"
                                             /> {' '}
