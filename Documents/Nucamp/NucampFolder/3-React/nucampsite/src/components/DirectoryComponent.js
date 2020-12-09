@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-// CardText, CardBody, is not being used 
 import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem ({campsite}){
